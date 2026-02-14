@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adval Specialty - Adding Value</title>
+
+    <!-- Typography: Inter & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Icons (Phosphor Icons or FontAwesome placeholder) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">ADVAL GROUP</a>
+
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Adval Group</a></li>
+                <li><a href="#products" class="nav-link">Product & Industries</a></li>
+                <li><a href="#rnd" class="nav-link">R&D</a></li>
+                <li><a href="#wastewater" class="nav-link">Waste Water Solutions</a></li>
+                <li><a href="#contact" class="nav-link btn-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title white-text">Adval Specialty: Technocrats <span class="highlight">ad</span>ding <span
+                    class="highlight">val</span>ue to varied industry segments</h1>
+            <h2 class="hero-subtitle">Celebrating 20 years of <span class="highlight">ad</span>ding <span
+                    class="highlight">val</span>ue</h2>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-header">
+                <h2>Our Story</h2>
+            </div>
+
+            <div class="about-grid">
+                <!-- Content / Story -->
+                <div class="about-text">
+                    <p>Adval Specialty is a technocrat-led organization committed to excellence in the chemical
+                        manufacturing industry. Founded on the principles of innovation and integrity, we specialize in
+                        delivering high-performance solutions tailored to the unique needs of our sector.</p>
+                    <p>Our team of dedicated technocrats combines deep industry knowledge with cutting-edge research to
+                        create products that drive efficiency and sustainability. From our humble beginnings to becoming
+                        a key player in multiple industrial segments, our journey has been defined by a relentless
+                        pursuit of adding value.</p>
+
+                    <!-- Key Features Cards -->
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3 class="feature-title">R&D Excellence</h3>
+                            <p class="feature-desc">Products tailored under expert supervision.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="feature-title">Quality & Trust</h3>
+                            <p class="feature-desc">Consistent quality and timely dispatches.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="feature-title">Pan-India</h3>
+                            <p class="feature-desc">Strategic locations in Gondia & Navi Mumbai.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone Timeline -->
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2006</span>
+                            <span class="timeline-content">Adval Speciality established.</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2013</span>
+                            <span class="timeline-content">Adval Organics Pvt. Ltd. formed.</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2015</span>
+                            <span class="timeline-content">Polymerisation unit commissioned (Sheela Chemicals).</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020</span>
+                            <span class="timeline-content">AKD Emulsion Plant commissioned.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Industries (Interactive) -->
+    <section id="products" class="products section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Explore our specialized solutions across various sectors.</p>
+            </div>
+
+            <div class="industry-explorer">
+                <!-- Left: Interactive Process Diagram & Dynamic Content -->
+                <div class="explorer-left">
+                    <div class="process-visual">
+                        <svg viewBox="0 0 800 450" id="plant-schematic" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Definitions for reusables -->
+                            <defs>
+                                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f1f5f9" stroke-width="1" />
+                                </pattern>
+                            </defs>
+
+                            <!-- Background Grid (Optional) -->
+                            <!-- <rect width="100%" height="100%" fill="url(#grid)" /> -->
+
+                            <!-- Base Ground Line -->
+                            <line x1="0" y1="420" x2="800" y2="420" stroke="#cbd5e1" stroke-width="2" />
+
+                            <!-- Connecting Pipes (Background) -->
+                            <path d="M180 300 H 650" stroke="#cbd5e1" stroke-width="2" fill="none" />
+                            <path d="M250 200 V 300" stroke="#cbd5e1" stroke-width="2" fill="none" />
+                            <path d="M550 250 V 300" stroke="#cbd5e1" stroke-width="2" fill="none" />
+
+                            <!-- Unit 1: Pulp & Paper (Chimney/Boiler Stack) -->
+                            <g id="svg-pulp" class="plant-unit">
+                                <!-- Chimney -->
+                                <path d="M80 420 L100 150 L140 150 L160 420" fill="#fff" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <rect x="95" y="170" width="50" height="10" fill="none" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <rect x="90" y="250" width="60" height="10" fill="none" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <!-- Smoke (Stylized) -->
+                                <path d="M120 120 Q140 100 120 80 Q100 60 120 40" stroke="#e2e8f0" stroke-width="2"
+                                    fill="none" />
+                                <text x="120" y="380" text-anchor="middle" class="svg-label">Boiler/Pulp</text>
+                            </g>
+
+                            <!-- Unit 2: Sugar (Evaporator / Tower) -->
+                            <g id="svg-sugar" class="plant-unit">
+                                <rect x="200" y="200" width="60" height="220" fill="#fff" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <path d="M200 200 L230 160 L260 200" fill="#fff" stroke="#94a3b8" stroke-width="2" />
+                                <rect x="210" y="250" width="40" height="20" fill="none" stroke="#94a3b8"
+                                    stroke-width="1" />
+                                <rect x="210" y="300" width="40" height="20" fill="none" stroke="#94a3b8"
+                                    stroke-width="1" />
+                                <text x="230" y="380" text-anchor="middle" class="svg-label">Evaporator</text>
+                            </g>
+
+                            <!-- Unit 3: Textile (Factory Shed) -->
+                            <g id="svg-textile" class="plant-unit">
+                                <path d="M280 420 V 280 L 320 250 V 280 L 360 250 V 280 L 400 250 V 420" fill="#fff"
+                                    stroke="#94a3b8" stroke-width="2" />
+                                <rect x="300" y="320" width="20" height="20" fill="none" stroke="#94a3b8"
+                                    stroke-width="1" />
+                                <rect x="340" y="320" width="20" height="20" fill="none" stroke="#94a3b8"
+                                    stroke-width="1" />
+                                <text x="340" y="400" text-anchor="middle" class="svg-label">Processing</text>
+                            </g>
+
+                            <!-- Unit 4: Fertilizers (Spherical Tank/Reactor) -->
+                            <g id="svg-fertilizer" class="plant-unit">
+                                <path d="M450 420 L450 350" stroke="#94a3b8" stroke-width="2" />
+                                <path d="M510 420 L510 350" stroke="#94a3b8" stroke-width="2" />
+                                <circle cx="480" cy="320" r="50" fill="#fff" stroke="#94a3b8" stroke-width="2" />
+                                <path d="M430 320 H 530" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 2" />
+                                <text x="480" y="325" text-anchor="middle" class="svg-label">Reactor</text>
+                            </g>
+
+                            <!-- Unit 5: Food (Silo) -->
+                            <g id="svg-food" class="plant-unit">
+                                <path d="M550 420 L550 220 A 30 10 0 1 1 610 220 L610 420" fill="#fff" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <ellipse cx="580" cy="220" rx="30" ry="10" fill="none" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <text x="580" y="350" text-anchor="middle" class="svg-label">Storage</text>
+                            </g>
+
+                            <!-- Unit 6: Minerals (Conveyor) -->
+                            <g id="svg-mineral" class="plant-unit">
+                                <path d="M680 420 L750 350 L750 320 L680 390 Z" fill="#fff" stroke="#94a3b8"
+                                    stroke-width="2" />
+                                <circle cx="690" cy="405" r="5" fill="#fff" stroke="#94a3b8" stroke-width="2" />
+                                <circle cx="740" cy="335" r="5" fill="#fff" stroke="#94a3b8" stroke-width="2" />
+                                <text x="720" y="400" text-anchor="middle" class="svg-label">Conveyor</text>
+                            </g>
+
+                            <!-- Unit 7: Leather (Drum) -->
+                            <g id="svg-leather" class="plant-unit">
+                                <circle cx="650" cy="150" r="30" fill="#fff" stroke="#94a3b8" stroke-width="2" />
+                                <path d="M650 150 L 670 170" stroke="#94a3b8" stroke-width="2" />
+                                <path d="M650 150 L 630 130" stroke="#94a3b8" stroke-width="2" />
+                                <text x="650" y="200" text-anchor="middle" class="svg-label">Drum</text>
+                            </g>
+
+                            <!-- Sun (Decor) -->
+                            <g transform="translate(400, 80)">
+                                <circle cx="0" cy="0" r="15" fill="none" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="0" y1="-25" x2="0" y2="-20" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="0" y1="25" x2="0" y2="20" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="-25" y1="0" x2="-20" y2="0" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="25" y1="0" x2="20" y2="0" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="18" y1="18" x2="14" y2="14" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="-18" y1="-18" x2="-14" y2="-14" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="-18" y1="18" x2="-14" y2="14" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="18" y1="-18" x2="14" y2="-14" stroke="#f59e0b" stroke-width="2" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Dynamic Details (Moved to Left) -->
+                    <div id="industry-detail-card" class="detail-card">
+                        <div class="detail-content">
+                            <h3 id="detail-title">ADVAL SOLUTIONS</h3>
+                            <p id="detail-desc">Select an industry from the icons to see our specialized solutions.</p>
+                            <ul id="detail-list" class="chemical-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Circular Icons Grid -->
+                <div class="industry-right">
+                    <div class="industry-grid">
+                        <button class="industry-btn" data-target="pulp">
+                            <div class="icon-circle"><i class="ph ph-newspaper"></i></div>
+                            <span class="btn-label">Pulp & Paper</span>
+                        </button>
+                        <button class="industry-btn" data-target="sugar">
+                            <div class="icon-circle"><i class="ph ph-cube"></i></div>
+                            <span class="btn-label">Sugar</span>
+                        </button>
+                        <button class="industry-btn" data-target="textile">
+                            <div class="icon-circle"><i class="ph ph-t-shirt"></i></div>
+                            <span class="btn-label">Textile</span>
+                        </button>
+                        <button class="industry-btn" data-target="fertilizer">
+                            <div class="icon-circle"><i class="ph ph-plant"></i></div>
+                            <span class="btn-label">Fertilizers</span>
+                        </button>
+                        <button class="industry-btn" data-target="food">
+                            <div class="icon-circle"><i class="ph ph-pizza"></i></div>
+                            <span class="btn-label">Food</span>
+                        </button>
+                        <button class="industry-btn" data-target="mineral">
+                            <div class="icon-circle"><i class="ph ph-diamond"></i></div>
+                            <span class="btn-label">Minerals</span>
+                        </button>
+                        <button class="industry-btn" data-target="leather">
+                            <div class="icon-circle"><i class="ph ph-briefcase"></i></div>
+                            <span class="btn-label">Leather</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- R&D Section (Dark Mode / Glass & Steel) -->
+    <section id="rnd" class="rnd-section">
+        <div class="parallax-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="overlay"></div>
+
+        <div class="container rnd-content">
+            <div class="section-header dark-header">
+                <h2>Innovation at the Core</h2>
+                <p>Our Navi Mumbai Research Center: Where science meets sustainability.</p>
+            </div>
+
+            <div class="rnd-grid">
+                <!-- Card 1: Tech Investment -->
+                <div class="glass-card">
+                    <div class="card-icon"><i class="ph ph-flask"></i></div>
+                    <h3>Technological Investment</h3>
+                    <p>Continuous upgrades in production reliability to ensure consistent high-quality output.</p>
+                </div>
+
+                <!-- Card 2: Customer Success -->
+                <div class="glass-card">
+                    <div class="card-icon"><i class="ph ph-handshake"></i></div>
+                    <h3>Customer Success</h3>
+                    <p>Dedicated to making clients successful by optimizing their specific chemical processes.</p>
+                </div>
+
+                <!-- Card 3: Performance Engineering -->
+                <div class="glass-card">
+                    <div class="card-icon"><i class="ph ph-gauge"></i></div>
+                    <h3>Performance Engineering</h3>
+                    <p>Enhancing value through superior quality standards and custom formulations.</p>
+                </div>
+            </div>
+
+            <!-- Dynamic R&D Highlight (Placeholder for JS connection) -->
+            <div id="rnd-dynamic-highlight" class="rnd-highlight hidden">
+                <h4>Specialized Focus: <span id="rnd-sector-name">Pulp & Paper</span></h4>
+                <p id="rnd-sector-desc">Developing next-gen Oxy-bleach boosters for cleaner effluent.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Waste Water Solutions ("Blueprint to Reality") -->
+    <section id="wastewater" class="wastewater-blueprint">
+        <!-- Hero with Blueprint Transition -->
+        <div class="blueprint-hero">
+            <div class="blueprint-overlay"></div>
+            <div class="container hero-content">
+                <span class="blueprint-tag">Engineering Excellence</span>
+                <h2>Advanced Water & Wastewater Solutions</h2>
+                <p>From chemical supply to full-scale <strong>Zero Liquid Discharge (ZLD)</strong> turnkey projects.</p>
+            </div>
+        </div>
+
+        <div class="container blueprint-body">
+            <!-- 1. Expertise & Performance (Impact Grid) -->
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="ph ph-drop"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-value">95%</span>
+                        <span class="impact-label">BOD/COD Reduction</span>
+                    </div>
+                    <p>Expert solutions for high-strength organic load reduction.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="ph ph-waves"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-value">&lt;10</span>
+                        <span class="impact-label">TSS (mg/L)</span>
+                    </div>
+                    <p>Efficient suspended solids removal for crystal clear output.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="ph ph-arrow-up-right"></i></div>
+                    <div class="impact-data">
+                        <span class="impact-value">2x</span>
+                        <span class="impact-label">Efficiency Boost</span>
+                    </div>
+                    <p>Upgrading existing ETPs to high-performance systems.</p>
+                </div>
+            </div>
+
+            <!-- 2. The "Zero Discharge" Offer -->
+            <div class="zld-action-box">
+                <div class="zld-content">
+                    <h3>The Zero Liquid Discharge (ZLD) Promise</h3>
+                    <p>We study your system to provide 100% Zero Liquid Discharge solutions, ensuring total
+                        environmental compliance and water recovery.</p>
+                </div>
+                <button class="cta-btn primary-btn request-study-btn">Request a System Study <i
+                        class="ph ph-arrow-right"></i></button>
+            </div>
+
+            <!-- 3. Chemical Industry Gallery ("Visualizing Impact") -->
+            <div class="chemical-gallery-section">
+                <div class="section-header center-header">
+                    <h3>Chemical Excellence in Action</h3>
+                    <p>From molecular innovation to industrial application.</p>
+                </div>
+                <div class="gallery-grid">
+                    <!-- Uploaded Image 1 -->
+                    <div class="gallery-card">
+                        <img src="assets/images/chem_1.png" alt="Chemical Formulation" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4>Advanced Formulations</h4>
+                        </div>
+                    </div>
+                    <!-- Uploaded Image 2 -->
+                    <div class="gallery-card">
+                        <img src="assets/images/chem_2.png" alt="Industrial Application" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4>Industrial Solutions</h4>
+                        </div>
+                    </div>
+                    <!-- Uploaded Image 3 -->
+                    <div class="gallery-card">
+                        <img src="assets/images/chem_3.png" alt="Lab Research" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4>Research & Analysis</h4>
+                        </div>
+                    </div>
+                    <!-- Uploaded Image 4 -->
+                    <div class="gallery-card">
+                        <img src="assets/images/chem_4.png" alt="Raw Materials" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4>Quality Raw Materials</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section ("Trust Anchor") -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-header center-header">
+                <h2>Contact Adval</h2>
+                <p>Global Reach, Local Presence.</p>
+            </div>
+
+            <!-- 1. Integrated Map & Location Hierarchy -->
+            <div class="location-hierarchy">
+                <!-- Location 1: Headquarters -->
+                <div class="location-row">
+                    <div class="loc-details">
+                        <div class="loc-badge">Headquarters</div>
+                        <h3>Navi Mumbai</h3>
+                        <p class="address">
+                            B-102, Paras Villa, Plot no. 46, Sec. 50 (old),<br>
+                            Seawoods Darave, Navi Mumbai, 400706, INDIA.
+                        </p>
+                        <div class="loc-contacts">
+                            <a href="tel:+919321153312" class="contact-item"><i class="ph ph-phone"></i> +91 93211
+                                53312</a>
+                            <a href="mailto:info@advalspeciality.com" class="contact-item"><i
+                                    class="ph ph-envelope"></i> info@advalspeciality.com</a>
+                        </div>
+                    </div>
+                    <div class="loc-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.996162391671!2d73.0163353750515!3d19.0198420537299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3c0c0c0c0c1%3A0x0!2sSeawoods%20Darave!5e0!3m2!1sen!2sin!4v1707567890123!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="loc-divider"></div>
+
+                <!-- Location 2: Production Unit -->
+                <div class="location-row">
+                    <div class="loc-details">
+                        <div class="loc-badge production">Production Unit</div>
+                        <h3>Gondia</h3>
+                        <p class="address">
+                            Kh. no. 374/A2, Dhakani,<br>
+                            Tehsil & Dist. Gondia, 441614, INDIA.
+                        </p>
+                        <div class="loc-contacts">
+                            <a href="tel:+919326112164" class="contact-item"><i class="ph ph-phone"></i> +91 93261
+                                12164</a>
+                            <a href="mailto:sales@advalspeciality.com" class="contact-item"><i
+                                    class="ph ph-envelope"></i> sales@advalspeciality.com</a>
+                        </div>
+                    </div>
+                    <div class="loc-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.916892345678!2d80.1983!3d21.4589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGondia!5e0!3m2!1sen!2sin!4v1707567890123!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Note: Office Hours -->
+            <div class="contact-footer-note">
+                <i class="ph ph-clock"></i> <span>Office Hours: Mon–Fri 09:00AM - 06:00PM</span>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <!-- Clientele Grid (Integrated into Footer Top) -->
+        <div class="clientele-strip">
+            <div class="container">
+                <p class="clientele-heading">Trusted Partners</p>
+                <div class="logo-grid">
+                    <!-- Placeholders for Logos -->
+                    <div class="client-logo">JK Papers</div>
+                    <div class="client-logo">Origami</div>
+                    <div class="client-logo">Andhra Paper</div>
+                    <div class="client-logo">Century Paper</div>
+                    <div class="client-logo">Star Paper</div>
+                    <div class="client-logo">Mahaveer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="container footer-grid">
+                <!-- Branding -->
+                <div class="footer-col brand-col">
+                    <h2 class="footer-logo">Ad<span class="highlight">val</span></h2>
+                    <p class="tagline">Celebrating 20 Years of Excellence in Specialty Chemicals.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col links-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#rnd">R&D</a></li>
+                        <li><a href="#wastewater">Wastewater</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal/Map -->
+                <div class="footer-col legal-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Adval Specialty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
