@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adval Specialty - Adding Value</title>
+
+    <!-- Typography: Inter & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Icons (Phosphor Icons or FontAwesome placeholder) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AdVal GROUP</a>
+
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Adval Group</a></li>
+                <li><a href="products.html" class="nav-link">Product & Industries</a></li>
+                <li><a href="rnd.html" class="nav-link">R&D</a></li>
+                <li><a href="wastewater.html" class="nav-link">Waste Water Solutions</a></li>
+                <li><a href="contact.html" class="nav-link btn-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products & Industries (Interactive) -->
+    <section id="products" class="products section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Explore our specialized solutions across various sectors.</p>
+            </div>
+
+            <div class="industry-explorer">
+                <!-- Left: Interactive Process Diagram & Dynamic Content -->
+                <div class="explorer-left">
+                    <div class="process-visual interactive-map">
+                        <img src="assets/images/realistic_factory.png" alt="Industrial Chemistry"
+                            class="industry-hero-img">
+                        <div class="visual-glass-overlay"></div>
+
+                        <!-- Interactive Image Hotspots mapping to 7 Industries -->
+                        <div id="svg-pulp" class="plant-unit hotspot" style="top: 20%; left: 25%;"
+                            data-label="Pulp & Paper">
+                            <i class="ph ph-newspaper"></i>
+                        </div>
+                        <div id="svg-sugar" class="plant-unit hotspot" style="top: 35%; left: 65%;" data-label="Sugar">
+                            <i class="ph ph-cube"></i>
+                        </div>
+                        <div id="svg-textile" class="plant-unit hotspot" style="top: 50%; left: 35%;"
+                            data-label="Textile">
+                            <i class="ph ph-t-shirt"></i>
+                        </div>
+                        <div id="svg-fertilizer" class="plant-unit hotspot" style="top: 45%; left: 75%;"
+                            data-label="Fertilizers">
+                            <i class="ph ph-plant"></i>
+                        </div>
+                        <div id="svg-food" class="plant-unit hotspot" style="top: 75%; left: 45%;" data-label="Food">
+                            <i class="ph ph-pizza"></i>
+                        </div>
+                        <div id="svg-mineral" class="plant-unit hotspot" style="top: 65%; left: 15%;"
+                            data-label="Minerals">
+                            <i class="ph ph-diamond"></i>
+                        </div>
+                        <div id="svg-leather" class="plant-unit hotspot" style="top: 80%; left: 80%;"
+                            data-label="Leather">
+                            <i class="ph ph-briefcase"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Details (Moved to Left) -->
+                    <div id="industry-detail-card" class="detail-card">
+                        <div class="detail-content">
+                            <h3 id="detail-title">ADVAL SOLUTIONS</h3>
+                            <p id="detail-desc">Select an industry from the icons to see our specialized solutions.</p>
+                            <ul id="detail-list" class="chemical-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Circular Icons Grid -->
+                <div class="industry-right">
+                    <div class="industry-grid">
+                        <button class="industry-btn" data-target="pulp">
+                            <div class="icon-circle"><i class="ph ph-newspaper"></i></div>
+                            <span class="btn-label">Pulp & Paper</span>
+                        </button>
+                        <button class="industry-btn" data-target="sugar">
+                            <div class="icon-circle"><i class="ph ph-cube"></i></div>
+                            <span class="btn-label">Sugar</span>
+                        </button>
+                        <button class="industry-btn" data-target="textile">
+                            <div class="icon-circle"><i class="ph ph-t-shirt"></i></div>
+                            <span class="btn-label">Textile</span>
+                        </button>
+                        <button class="industry-btn" data-target="fertilizer">
+                            <div class="icon-circle"><i class="ph ph-plant"></i></div>
+                            <span class="btn-label">Fertilizers</span>
+                        </button>
+                        <button class="industry-btn" data-target="food">
+                            <div class="icon-circle"><i class="ph ph-pizza"></i></div>
+                            <span class="btn-label">Food</span>
+                        </button>
+                        <button class="industry-btn" data-target="mineral">
+                            <div class="icon-circle"><i class="ph ph-diamond"></i></div>
+                            <span class="btn-label">Minerals</span>
+                        </button>
+                        <button class="industry-btn" data-target="leather">
+                            <div class="icon-circle"><i class="ph ph-briefcase"></i></div>
+                            <span class="btn-label">Leather</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <!-- Clientele Grid (Integrated into Footer Top) -->
+        <div class="clientele-strip">
+            <div class="container">
+                <p class="clientele-heading">Trusted Partners</p>
+                <div class="logo-grid">
+                    <!-- Placeholders for Logos -->
+                    <div class="client-logo">JK Papers</div>
+                    <div class="client-logo">Origami</div>
+                    <div class="client-logo">Andhra Paper</div>
+                    <div class="client-logo">Century Paper</div>
+                    <div class="client-logo">Star Paper</div>
+                    <div class="client-logo">Mahaveer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="container footer-grid">
+                <!-- Branding -->
+                <div class="footer-col brand-col">
+                    <h2 class="footer-logo">Ad<span class="highlight">val</span></h2>
+                    <p class="tagline">Celebrating 20 Years of Excellence in Specialty Chemicals.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col links-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="rnd.html">R&D</a></li>
+                        <li><a href="wastewater.html">Wastewater</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal/Map -->
+                <div class="footer-col legal-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Adval Specialty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
