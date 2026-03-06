@@ -126,13 +126,34 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hover Effect
         btn.addEventListener('mouseenter', () => highlightSection(target));
 
+        // Remove hover effect when leaving the button
+        btn.addEventListener('mouseleave', () => highlightSection(null));
+
         // Click Effect (Expand Details)
         btn.addEventListener('click', () => {
+            // Keep it highlighted if they explicitly clicked it to read details
             highlightSection(target);
             showDetails(target);
         });
     });
 
-    // Reset when mouse leaves grid container (Optional, maybe keep selection?)
-    // document.querySelector('.industry-grid').addEventListener('mouseleave', () => highlightSection(null));
+    // Also allow hovering on the actual image hotspots to highlight the button
+    plantUnits.forEach(unit => {
+        const target = Object.keys(industryData).find(key => industryData[key].svgId === unit.id);
+
+        unit.addEventListener('mouseenter', () => {
+            if (target) highlightSection(target);
+        });
+
+        unit.addEventListener('mouseleave', () => {
+            highlightSection(null);
+        });
+
+        unit.addEventListener('click', () => {
+            if (target) {
+                highlightSection(target);
+                showDetails(target);
+            }
+        });
+    });
 });

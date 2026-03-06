@@ -1,6 +1,7 @@
 /* Global Settings & Variables */
 :root {
-  --primary-blue: #0056b3;
+  --primary-blue: #0033a0;
+  --accent-red: #e31837;
   /* Brand highlight color */
   --industrial-dark: #0f172a;
   /* Dark Slate/Navy for text */
@@ -12,7 +13,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --transition-speed: 0.3s;
-  --font-main: 'Inter', sans-serif;
+  --font-main: 'Roboto', sans-serif;
 }
 
 /* Reset & Base Styles */
@@ -154,7 +155,7 @@ h3 {
 }
 
 .btn-contact:hover {
-  background-color: #004494;
+  background-color: var(--accent-red);
   transform: translateY(-2px);
 }
 
@@ -211,7 +212,7 @@ h3 {
   color: var(--primary-blue);
   font-weight: 700;
   /* Light text shadow for contrast against dark bg if needed, though color is bright */
-  text-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+  text-shadow: 0 0 10px rgba(0, 51, 160, 0.3);
 }
 
 /* About Section */
@@ -225,7 +226,7 @@ h3 {
 }
 
 .about-header h2 {
-  color: var(--industrial-dark);
+  color: var(--primary-blue);
   position: relative;
   display: inline-block;
 }
@@ -235,7 +236,7 @@ h3 {
   display: block;
   width: 60px;
   height: 4px;
-  background-color: var(--primary-blue);
+  background-color: var(--accent-red);
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -256,9 +257,10 @@ h3 {
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 20px;
-  border-left: 2px solid #e2e8f0;
+  padding-left: 0;
 }
+
+/* Removed continuous ::before, reverting back to perfectly-measured individual item connections */
 
 .timeline-item {
   position: relative;
@@ -266,16 +268,32 @@ h3 {
   padding-left: 30px;
 }
 
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 13px;
+  /* Center of the dot (5px top + 8px half-height) */
+  height: calc(100% + 40px);
+  /* 100% of current item height + 40px margin exactly hits the top border of next item. The next dot is at top: 5px, so center is +13px. Thus, 100% gives text height. */
+  width: 2px;
+  background-color: var(--accent-red);
+  z-index: 0;
+}
+
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -29px;
+  left: 0;
   top: 5px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: var(--white);
-  border: 4px solid var(--primary-blue);
+  border: 4px solid var(--accent-red);
+  box-sizing: border-box;
+  /* Ensure border size doesn't increase actual dimensions */
+  z-index: 1;
 }
 
 .timeline-year {
@@ -293,13 +311,15 @@ h3 {
 
 /* Key Features Grid */
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 30px;
   margin-top: 60px;
 }
 
 .feature-card {
+  flex: 1;
+  max-width: 320px;
   background: var(--light-bg);
   padding: 30px;
   border-radius: var(--border-radius-md);
@@ -311,7 +331,7 @@ h3 {
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-bottom-color: var(--primary-blue);
+  border-bottom-color: var(--accent-red);
   background: white;
 }
 
@@ -466,9 +486,9 @@ h3 {
 .plant-unit.active-zone rect,
 .plant-unit.active-zone ellipse,
 .plant-unit.active-zone line {
-  stroke: var(--primary-blue);
+  stroke: var(--accent-red);
   stroke-width: 3px;
-  /* fill: rgba(0, 86, 179, 0.05); Optional faint fill */
+  /* fill: rgba(0, 51, 160, 0.05); Optional faint fill */
 }
 
 .svg-label {
@@ -492,7 +512,7 @@ h3 {
   border-left: 0;
   padding: 0;
   box-shadow: none;
-  border-top: 2px solid var(--primary-blue);
+  border-top: 2px solid var(--accent-red);
   padding-top: 20px;
   opacity: 1;
   /* Always visible but content changes */
@@ -583,7 +603,7 @@ h3 {
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: white;
   font-size: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 51, 160, 0.2);
 }
 
 .industry-btn:hover .icon-circle,
@@ -1232,6 +1252,13 @@ h3 {
   color: #64748b;
   /* Grayscale effect placeholder */
   /* Real logos would be img tags with filter: grayscale(1) */
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.client-logo:hover {
+  transform: scale(1.15);
+  color: var(--white);
 }
 
 .footer-main {
@@ -1483,39 +1510,106 @@ h3 {
   color: #cbd5e1 !important;
 }
 
-/* Visual & Cards adjustments for Dark Mode */
+/* Premium Industry Hero Image */
 .process-visual {
-  background: transparent !important;
-  /* Make transparent to show blur */
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 450px;
+  background: #0f172a;
 }
 
-/* Invert SVG lines for visibility on dark */
-#plant-schematic line,
-#plant-schematic path,
-#plant-schematic rect,
-#plant-schematic circle,
-#plant-schematic ellipse {
-  stroke: #94a3b8;
-  /* Keep slate, maybe lighter? */
+.industry-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease;
+  opacity: 0.85;
 }
 
-#plant-schematic .plant-unit[fill="#fff"] {
-  fill: rgba(255, 255, 255, 0.1);
-  /* Translucent fill */
-  stroke: #cbd5e1;
+.process-visual:hover .industry-hero-img {
+  transform: scale(1.05);
+  opacity: 1;
 }
 
-.plant-unit.active-zone path,
-.plant-unit.active-zone circle,
-.plant-unit.active-zone rect,
-.plant-unit.active-zone ellipse,
-.plant-unit.active-zone line {
-  stroke: #38bdf8 !important;
-  /* Lighter blue for dark mode */
+.visual-glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, transparent 50%, rgba(15, 23, 42, 0.8) 100%);
+  pointer-events: none;
+  box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.1);
 }
 
-.svg-label {
-  fill: #cbd5e1;
+/* Interactive Image Hotspots */
+.interactive-map {
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Much smoother, slower organic easing */
+  cursor: pointer;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  /* Center perfectly on coordinate */
+}
+
+.hotspot:hover,
+.hotspot.active-zone {
+  transform: translate(-50%, -50%) scale(1.3);
+  /* Slightly reduced scale for elegance */
+  background: var(--primary-blue);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.5);
+  /* Softer shadow */
+  z-index: 20;
+}
+
+.hotspot::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  /* Boxy formal instead of pill */
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hotspot:hover::after,
+.hotspot.active-zone::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Detail Card Glassmorphism */
